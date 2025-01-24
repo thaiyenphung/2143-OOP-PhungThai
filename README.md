@@ -10,4 +10,4 @@
 
 #### Avatar:
 
-![image](https://github.com/user-attachments/assets/3e49b262-a142-4261-8da1-e2e5fb6620cf)
+<img src=![image](https://github.com/user-attachments/assets/3e49b262-a142-4261-8da1-e2e5fb6620cf) width=150>
