@@ -10,5 +10,5 @@
 
 #### Avatar:
 
-![image](https://github.com/user-attachments/assets/2032d5c9-d249-47ae-8a15-b84d6a34e3a6)
+<img scr="https://github.com/user-attachments/assets/2032d5c9-d249-47ae-8a15-b84d6a34e3a6" width = 300>
 
