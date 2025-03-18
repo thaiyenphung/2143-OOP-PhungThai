@@ -26,7 +26,8 @@
 <ins>**Destructors**:
 - A **destructor** is a special function in C++ that is automatically called when an object **goes out of scope** or explicitly **deleted**. It is used for **clean up operation** such as deallocating memory, closing files, or releasing resources**.
 - Destructors are important for object lifecycle management because they ensure resources acquired by an object during its lifetime are released when the object is destroyed, **preventing memory leaks and resource exhaustion**.
-- Key Features of a Destructor:
+
+**Key Features of a Destructor:**
   - Same name as the class but prefixed with `~`
   - No parameters and no return type
   - Automatically called when an object is destroyed
