@@ -22,15 +22,16 @@ public:
         setGrade(g);
     }
 
-    void setGrade(int g) { // Controls how grades are set
+    void setGrade(int g)
+    { // Controls how grades are set
         if (g >= 0 && g <= 100)
-        {
             grade = g;
-        } else 
+         else 
             grade = 0; // Default value if invalid
     }
 
-    int getGrade() const { // Read-only access
+    int getGrade() const
+    { // Read-only access
         return grade;
     }
 };
