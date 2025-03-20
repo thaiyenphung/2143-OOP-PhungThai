@@ -201,6 +201,43 @@ public:
 - `accountNumber`: protect sensible account information. If it is public, external code can change the account number, leading to mix-ups and unauthorized modifications.
 
 **`public` methods:
-- `deposit(double amount)`: ensures that only positive amount can be added
+- `deposit(double amount)`:
+    - Acts as a controlled method, ensures that only valid deposits affect the balance.
+    - Prevents incorrect transactions (`myAccount.balance += 100;` is invalid)
+- `withdraw(double amount)`:
+    - Ensures that the withdrawal amount is not greater than the current balance to prevent overdrafts.
+    - Ensures that only valid withdrawals are processed, preventing tempering with account balance.
+- `getBalance()`:
+    - Users can only view the balance, external code cannot modify `balance` directly.
+    - Allows secure access to the balance without exposing it for unintended changes.
+  
+### 3. Documentation
+**Why other developers must not directly manipulate the `balance`:
+- `balance` is made private so that it can only be accessed using methods within the class.
+- The only way to increase the balance is through the `deposit(double amount)` method, directly modifying the balance is not allowed
+- Balance decreases only when users withdraw the money using the `withdrawal(double amount)` and the amount of withdrawal cannot be greater than the current balance.
 
+## Part C: Reflection & Short-Answer
+### 1. Pros and Cons
+**Pros:**
+- **Data integrity and security:** prevents accidental or unauthorized modifications by ensuring all data changes go through controlled methods.
+- **Easier maintenance & debugging:** since data can only be modified through methods within the class, bugs and errors are easier to track and fix, which is good for code maintainability.
 
+**Cons:**
+- Increase code complexity: adding getter and setter methods makes the code larger and more complex compared to directly accessing variables.
+
+### Encapsulation vs. Abstraction:
+- **Encapsulation** focuses on restricting access to data by bundling it with controlled methods within a class. It protects the internal data from outside use, preventing unauthorized modifications.
+- **Abstraction** hides unnecessary implementation details of a complex object from users, allowing a simpler interface for users to interact with an object without knowing its internal workings.
+
+### Why Encapsulation and Abstraction are forms of Information Hiding:
+- **Encapsulation** hides implementation details at the data levels (private variables, controlled access via methods).
+- **Abstraction** hides complex implementation details while exposing only the functionality, allowing users to interact with an object without needing to understand its internal workings.
+
+### 3. Testing Encapsulation Classes**
+**Test Through Public Method:**
+- Example: test if `deposit(100)` correctly increases the balance by calling `getBalance()`
+  
+**Check Expected Outcome:**
+- Example: ensure public methods like `deposit` increase balance, `withdraw` deduct balance correctly, and withdrawing more than the balance fails
+    
