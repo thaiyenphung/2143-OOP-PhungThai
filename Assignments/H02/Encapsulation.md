@@ -11,21 +11,23 @@
 - Encapsulation works like how schools manage student grades. Student can view their grade but can't change it themselves. Only authorized people like teachers and administrators can update it, and they have specific rules to follow when making changes.
 
 ```c++
-class Student {
+class Student
+{
 private:
     int grade; // Private: Can't be changed directly
 
 public:
-    Student(int g) {
+    Student(int g)
+    {
         setGrade(g);
     }
 
     void setGrade(int g) { // Controls how grades are set
-        if (g >= 0 && g <= 100) {
+        if (g >= 0 && g <= 100)
+        {
             grade = g;
-        } else {
+        } else 
             grade = 0; // Default value if invalid
-        }
     }
 
     int getGrade() const { // Read-only access
@@ -33,7 +35,8 @@ public:
     }
 };
 
-int main() {
+int main()
+{
     Student s1(85);
 
     cout << "Your grade: " << s1.getGrade() << endl; // Can view grade
@@ -76,48 +79,45 @@ To make this work:
 
 ```c++
 // Base class: Character
-class Character {
-protected: // Protected: Accessible in derived classes but not outside
+class Character
+{
+protected: // Accessible in derived classes but not outside
     int health;
 
 public:
     Character(int hp) { health = hp; }
 
-    void showHealth() {
+    void showHealth()
+    {
         cout << "Health: " << health << endl;
     }
 };
 
 // Derived class: Player
-class Player : public Character {
+class Player : public Character
+{
 public:
     Player(int hp) : Character(hp) {}
 
-    void takeDamage(int damage) {
-        health -= damage; // Allowed because health is protected
+    void takeDamage(int damage)
+    {
+        health -= damage; // Allowed because health is `protected`
         cout << "Player took " << damage << " damage. Remaining health: " << health << endl;
     }
 };
 
 // Derived class: Enemy
-class Enemy : public Character {
+class Enemy : public Character
+{
 public:
     Enemy(int hp) : Character(hp) {}
 
-    void attack(Player &p) {
+    void attack(Player &p)
+    {
         cout << "Enemy attacks player!" << endl;
         p.takeDamage(10);
     }
 };
-
-int main() {
-    Player p1(100);
-    Enemy e1(50);
-
-    p1.showHealth();
-    e1.attack(p1); // Enemy reduces Player's HP
-    p1.showHealth();
-}
 ```
 ## 3. Impact on Maintenance
 - **Data hiding:** encapsulation **hides internal data** from external access, preventing unintended modifications. Using access specifiers, we control what parts of a class are exposed.
