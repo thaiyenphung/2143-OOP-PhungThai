@@ -14,7 +14,7 @@
 class Student
 {
 private:
-    int grade; // Private: Can't be changed directly
+    int grade; // Can't be changed directly
 
 public:
     Student(int g)
@@ -27,27 +27,14 @@ public:
         if (g >= 0 && g <= 100)
             grade = g;
          else 
-            grade = 0; // Default value if invalid
+            grade = 0; 
     }
 
     int getGrade() const
-    { // Read-only access
+    { 
         return grade;
     }
 };
-
-int main()
-{
-    Student s1(85);
-
-    cout << "Your grade: " << s1.getGrade() << endl; // Can view grade
-
-    // Can't cheat by setting an invalid value:
-    s1.setGrade(150);
-    cout << "Updated grade: " << s1.getGrade() << endl; // Still valid (0-100)
-
-    return 0;
-}
 ```
 
 - Getter `getGrade()` - allows students to view their grade
@@ -69,14 +56,14 @@ int main()
 
 **Example:**
 
-A game where every character has Health Points HP:
+**A game where every character has Health Points HP:**
 - A player's HP can change when they take damage or heal
 - An enemy can reduce the player's HP when attacking
 - However, the player shouldn't be able to change their own HP (like setting it to 1000 to cheat)
   
 To make this work:
 - HP is **protected**: only the player or enemy classes can modify it
-- HP is **not public**: prevents player to type a command to directly change their HP
+- HP is **not public**: prevents player from typing a command to directly change their HP
 
 ```c++
 // Base class: Character
