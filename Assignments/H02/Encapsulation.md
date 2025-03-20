@@ -214,7 +214,7 @@ public:
 **Cons:**
 - **Increase code complexity**: adding getter and setter methods makes the code larger and more complex compared to directly accessing variables.
 
-## Encapsulation vs. Abstraction:
+## 2. Encapsulation vs. Abstraction:
 - **Encapsulation** focuses on restricting access to data by bundling it with controlled methods within a class. It protects the internal data from outside use, preventing unauthorized modifications.
 - **Abstraction** hides unnecessary implementation details of a complex object from users, allowing a simpler interface for users to interact with an object without knowing its internal workings.
 
@@ -222,7 +222,7 @@ public:
 - **Encapsulation** hides implementation details at the data levels (private variables, controlled access via methods).
 - **Abstraction** hides complex implementation details while exposing only the functionality, allowing users to interact with an object without needing to understand its internal workings.
 
-###3. Testing Encapsulation Classes**
+## 3. Testing Encapsulation Classes
 **Test Through Public Method:**
 - Example: test if `deposit(100)` correctly increases the balance by calling `getBalance()`
   
