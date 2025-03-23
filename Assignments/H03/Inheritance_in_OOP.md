@@ -240,7 +240,7 @@ int main()
   - With overriding, we can **reuse the base class structure** and just change what we need. The base class stays unchanged, while each derived class adjusts behavior to fit its needs.
     
 **4. Easier Maintenance**
-  - As the program grows, overriding helps us **add new types or feautures** easily. We can create a new derived class, override only the methods we need to change and still keep the rest of the inherited functionality.
+  - As the program grows, overriding helps us **add new types or features** easily. We can create a new derived class, override only the methods we need to change and still keep the rest of the inherited functionality.
  
 ## 3. Inheritance vs. Interfaces/Abstract Classes
 ## Inheritance
@@ -249,10 +249,10 @@ int main()
 - **Single vs. Multiple Inheritance:**
     - Languages like Java support single inheritance (one parent).
     - C++ supports multiple inheritance, which adds flexibility but can also introduce complexity
-- Inheritance creates a **strong link** between the child and parent classess. If the base class changes, it can unintentionally affect all derived classes.
+- Inheritance creates a **strong link** between the child and parent classes. If the base class changes, it can unintentionally affect all derived classes.
 
 ## Interfaces and Abstract Classes
-- **Purpose:** allows classes to define a set of methods that must be implemented, without dictating how those methods shoule be carried out.
+- **Purpose:** allows classes to define a set of methods that must be implemented without dictating how those methods should be carried out.
   ### Interfaces:
     - Contain **only method declarations** (no actual code)
 	  - Focus **what** a class should do, not **how** it does it
@@ -260,4 +260,51 @@ int main()
 	### Abstract Classes:
     - Can have both declared (pure virtual) and implemented methods
 	  - Cannot be instantiated, they act as a template for derived classes
-	  - Useful when we want to enforce specific behaviro while also sharing common logic
+	  - Useful when we want to enforce specific behavior while also sharing common logic
+
+## 4. Pitfall of Multiple Inheritance
+**The Diamond Problem**
+- One common issue with **multiple inheritance** is the **Diamond Problem**. This happens when a class inherits from **two parent classes** that both inherit from a **same base class**.
+- As a result, the most derived class may inherit **two copies** of the base class, leading to **ambiguity, especially if both parents override or modify the same method.
+- Example:
+```c++
+class A {
+public:
+    void display() { cout << "Class A" << endl; }
+};
+
+class B : public A {};
+
+class C : public A {};
+
+// Problem: D inherits from both B and C
+class D : public B, public C {};
+
+int main() {
+    D obj;
+    obj.display();  // !!! Ambiguity! Compiler doesn't know which A::display() to use
+}
+```
+**Mitigation Strategies**
+### 1. Virtual Inheritance (C++)
+- C++ provides **virtual inheritance** to ensure that **only one shared instance** of the common base class exists, no matter how many times it's inherited through the hierarchy.
+- Example:
+```c++
+class A {
+public:
+    void display() {
+        cout << "Base class A" << endl;
+    }
+};
+
+class B : virtual public A {};
+class C : virtual public A {};
+class D : public B, public C {};
+
+int main() {
+    D obj;
+    obj.display();  // No ambiguity
+    return 0;
+}
+```
+> With `virtual` inheritance, D inherits just **one copy of class `A`, no diamond problem
