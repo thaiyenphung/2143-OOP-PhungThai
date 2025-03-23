@@ -308,3 +308,6 @@ int main() {
 }
 ```
 > With `virtual` inheritance, D inherits just **one copy of class `A`, no diamond problem
+
+### 2. Interface-Based Design (Java, C#)
+- Languages like Java and c# avoid multiple inheritance entirely but do not allow classes to inherit from more than one concrete class. Instead, they allow a class to **implement multiple interfaces** which only contain **method declarations**, not implementations, so there is **no ambiguity**.
