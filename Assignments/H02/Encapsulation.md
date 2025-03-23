@@ -45,7 +45,8 @@ public:
     ```c++
     s1.grade = 100; // unintended change, won't compile
     ```
-    
+---
+
 ## 2. Visibility Modifiers
 
 |Modifier| Description | Benefit | Drawback|
@@ -107,6 +108,8 @@ public:
     }
 };
 ```
+---
+
 ## 3. Impact on Maintenance
 - **Data hiding:** encapsulation **hides internal data** from external access, preventing unintended modifications. Using access specifiers, we control what parts of a class are exposed.
 - Allows **related data and behavior** to be grouped inside a class, making the code **easier to read, maintain, and test.**
@@ -136,6 +139,7 @@ public:
 - Prevents manipulations: if anyone could access the machine's internals, they could take products without paying
 - Protects functionality: users don't need to know how the motors work. They just press a button and it functions as expected
 - Simplifies interaction: if customers have to manually enter commands to dispense a snack, it is confusing and inefficient
+---
 
 ## Part B: Small-Class Design
 ## 1. Class Skeleton
@@ -183,6 +187,8 @@ public:
     }
 };
 ```
+---
+
 ## 2. Encapsulation Justification
 **`private` Data Members:**
 - `balance`: prevent direct modification of the account balance. This ensures that deposits and withdrawals only happen through controlled methods, prevents behaviors like setting a negative balance.
@@ -204,6 +210,7 @@ public:
 - `balance` is made private so that it can only be accessed using methods within the class.
 - The only way to increase the balance is through the `deposit(double amount)` method, directly modifying the balance is not allowed
 - Balance decreases only when users withdraw the money using the `withdrawal(double amount)` and the amount of withdrawal cannot be greater than the current balance.
+---
 
 ## Part C: Reflection & Short-Answer
 ## 1. Pros and Cons
