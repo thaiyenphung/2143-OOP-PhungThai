@@ -1,4 +1,4 @@
-# Part A: Conceptual Quesitions
+# Part A: Conceptual Questions
 ## 1. Composition vs. Aggregation
 ### Definition:
 - **Composition** is a **"has-a" relationship** where one class **completely owns** another class. If the owner is destroyed, the contained object is also destroyed. This implies **strong ownership**.
@@ -50,7 +50,7 @@
     ---
 
 ## 2. When to Use
-### Compostion
+### Composition
 **In a game**, a `Player` that has **attributes** (not base or derived classes because they represent components of a character) like `Health`, `Weapon`
 - A `Player` **has a** `Health` object to manage health points
 - A `Player` **has a** `Weapon` object to attack
@@ -117,3 +117,90 @@ A `Doctor` **has a relationship** with `Patients` but **does not own** them.\
 ---
 
 # Part B: Minimal Class Design
+**1. Composition (Strong "has-a": Address belongs to Person)**
+```c++
+class Address {
+private:
+    string street, city;
+
+public:
+    Address(string s, string c) : street(s), city(c) {}
+    void show() { cout << street << ", " << city << endl; }
+};
+
+class Person {
+private:
+    string name;
+    Address address;  // Composition: Address is part of Person
+
+public:
+    Person(string n, string s, string c) : name(n), address(s, c) {}
+
+    void showInfo() {
+        cout << "Name: " << name << " , Address: ";
+        address.show();
+    }
+};
+```
+- `Address` is created **inside** `Person` constructor
+- When `Person` is destroyed, so is `Address`
+---
+
+**2. Aggregation (Weak "has-a": Address can exist independently without Person)**
+```c++
+class Address {
+public:
+    string street, city;
+    Address(string s, string c) : street(s), city(c) {}
+    void show() { cout << street << ", " << city << endl; }
+};
+
+class Person {
+private:
+    string name;
+    Address* address;  // Aggregation: just a reference
+public:
+    Person(string n, Address* a) : name(n), address(a) {}
+
+    void showInfo() {
+        cout << "Name: " << name << "\nAddress: ";
+        address->show();
+    }
+};
+```
+- `Address` is created externally, `Person` holds a **reference** to it
+- When `Person` is deleted, `Address` still exists
+---
+
+# Part C: Reflection & Short Discussion
+## Ownership & Lifecycle
+### 1. Composition
+- The **child object is fully owned** by the parent
+- If the parent is destroyed or deallocated, the child is also destroyed automatically because their lifecycle is tight strongly together
+
+### 2. Aggregation
+- The child object **exists independently** of the parent
+- Even if the parent is destroyed, the child can continue to exist since it's **not owned or managed** by the parent
+---
+
+## Advantages & Pitfalls
+### Advantages
+- **Composition** offers full control over object lifecycles.
+- It ensures that child objects are cleaned up automatically when the parent is destroyed, reducing the risk of **memory leaks** in strong relationships
+
+### Pitfalls
+- Using composition instead of **aggregation** can lead to **unintended deletion or recreation** of shared objects that should remain independent.
+---
+
+## Constrast with Inheritance
+**1. "Has-a" Relationship (Composition/ Aggregation)**
+- Focuses on building systems by combining objects with specific roles (ex: a `Car` has an `Engine`)
+- Promotes modularity, flexibility and code reuse
+
+**2. "Is-a" Relationship (Inheritance)**
+- Defines a hierarchical relationship where one class is a **specialized type** of another (ex: `Cow` is an `Animal`, inherits traits like `makeSound()` or `eat()`)
+---
+
+### Why Avoid Inheritance When Possible
+- **Inheritance** creates **tight coupling** between the **subclass** and **base class**, which can make code more difficult to extend, easier to break with changes, and less reusable across different use cases.
+- By favoring **composition** or **aggregation**, behaviors can be added or modified without changing the inheritance hierarchy, offering designs that are easier to maintain.
