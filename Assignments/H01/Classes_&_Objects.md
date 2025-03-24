@@ -24,8 +24,9 @@
    - If we do not specify a constructor, the C++ compiler generates a **default constructor** for the object (expects no parameters and has an empty body).
  
 <ins>**Destructors**:
-- A **destructor** is a special function in C++ that is automatically called when an object **goes out of scope** or explicitly **deleted**. It is used for **clean up operation** such as deallocating memory, closing files, or releasing resources**.
-- Destructors are important for object lifecycle management because they ensure resources acquired by an object during its lifetime are released when the object is destroyed, **preventing memory leaks and resource exhaustion**.
+- A **destructor** is a special function in C++ that is automatically called when an object **goes out of scope** or explicitly **deleted**. It is used for **clean-up operations** such as **deallocating memory, closing files, or releasing resources**.
+  
+- **Destructors** are important for object lifecycle management because they ensure resources acquired by an object during its lifetime are released when the object is destroyed, **preventing memory leaks and resource exhaustion**.
 
 **Key Features of a Destructor:**
   - Same name as the class but prefixed with `~`
@@ -45,7 +46,7 @@
 
 ---
 
-**Why is it important for a class to manage its resources (e.g., memory) during its lifecycle?**
+### Why is it important for a class to manage its resources (e.g., memory) during its lifecycle?
 - **Maintain performance**: efficient allocation and dealllocation prevent wasted memory and ensure the system runs smoothly.
 - **Prevent memory leaks:** by releasing resources when they're no longer needed, the class avoids accumulating unused memory that can degrade performance over time.
 - **Enhances stability:** proper cleanup avoids errors like dangling pointers or corrupted states which can lead to crashes or unpredictable behavior.
@@ -82,17 +83,19 @@ int main()
 }
 ```
 <ins>**Explanation:**
-- The constructor `Unicorn(string n, float h)` initilizes the object's private members `name` and `health` when the object is created to ensure a valid starting state
+- The constructor `Unicorn(string n, float h)` initializes the object's private members `name` and `health` when the object is created to ensure a valid starting state
 - The destructor `~Unicorn()` is automatically called when the object goes out of scope, printing a message to indicate that the object is being cleaned up. This ensures that the resources are properly released when it is no longer needed.
 ---
 
 ## Part C: Reflection & Short-Answer
 
 **1. Important of Constructors:**
-- Constructors initialize objects when they are created, ensuring that all necessary attributes and resources are set up properly. It creates a valid and consistent state for the object, avoiding issue like unitialized variables or incomplete setups, which could lead to errors or unpredictable behaviors.
+- **Constructors** initialize objects when they are created, ensuring that all necessary attributes and resources are set up properly.
+- It creates a valid and consistent state for the object, avoiding issues like uninitialized variables or incomplete setups, which could lead to errors or unpredictable behaviors.
 
 **2. Role of Destructors:**
-- Destructors release resouces such as dynamically allocated memory or open file streams. Failing to free resources can lead to memory leaks, reduced performance, or system instability.
+- **Destructors** release resources such as dynamically allocated memory or open file streams. Failing to free resources can lead to memory leaks, reduced performance, or system instability.
 
 **3. Lifecycle Management:**
-- If a class does not properly manage its resources, it can lead to problems like memory leaks, dangling pointers, and unexpected behavior. Such issues can degrade performance, cause system instability, and ultimately lead to application crashes. Proper lifecycle management ensures efficiency and stability in a program.
+- If a class does not properly manage its resources, it can lead to problems like memory leaks, dangling pointers, and unexpected behavior. Such issues can degrade performance, cause system instability, and ultimately lead to application crashes.
+- Proper lifecycle management ensures efficiency and stability in a program.
