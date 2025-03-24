@@ -15,8 +15,69 @@
 - Focuses on **bundling data and methods together**, and **restricting direct access** to the internal workings of an object. It uses **access specifiers (`private`, `protected`, `public`)** to **control how data is accessed or modified**. It's about the **implementation** or **how** the object maintain control over its data.
 - **Example:** `speed` attribute of `Car` class is `private`, user must use `getSpeed()` and `setSpeed()` to interact with it. This prevents invalid or unintentional changes.
 
-### Why People Confuse Them? 
+### Why People Confuse Them
 - Because both involve **hiding details**, just in **different ways**:
     - **Abstraction** hides **unnecessary complexity** from the user
     - **Encapsulation** hides **data and implementation** to protect it and control access
 - **Abstraction** defines **what we can do**, and **Encapsulation** ensures **how it's done safely.**
+
+## 3. Benefits of Abstraction
+**1. Simplifies Collaboration:** 
+- Clear interface definitions allow **different teams** to work on separate components **independently** without needing to understand each other's implementation details
+
+**2. Eases Maintenance and Scalability:** 
+- Abstraction **conceals changes in the implementation**, allowing the system to be **updated**, **replaced**, or **extended** with minimal impact on existing code.
+
+### How Abstraction Reduce Code Complexity
+- **Abstraction** hides unnecessary details and focuses only on essential functionality, allowing developers to work with clean, high-level concepts rather than complex internal logic.
+---
+
+# Part B: Minimal Class Example (Pseudo-code)
+
+```c++
+// ABSTRACT BASE CLASS
+class BankAccount {
+public:
+    virtual void deposit(double amount) = 0; // Pure virtual method
+    virtual void withdraw(double amount) = 0;
+    virtual ~BankAccount() {}
+};
+
+// DERIVED CLASS
+class SavingAccount : public BankAccount {
+public:
+    void deposit(double amount) override {
+        cout << "Deposit $" << amount << " into savings" << endl;
+    }
+
+    void withdraw(double amount) override {
+        cout << "Withdraw $" << amount << " from savings." << endl;
+    }
+};
+
+int main() {
+    BankAccount account = new SavingAccount();
+
+    account->deposit(100.0);
+    account->withdraw(60.0);
+
+    delete account;
+
+    return 0;
+}
+```
+
+> - Pure `virtual` method (`virtual void deposit(double amount) = 0`) is a functino in a **base class** that has **no implementation** and must be **overridden** by any **derived class**
+> - It makes the base class **abstract**, meanign we **cannot create objects of that class directly** (`BankAccount account;` // ERROR: cannot directly instantiate abstract class)
+---
+
+# Part C: Reflection & Comparison
+## 1. Distilling the Essentials
+- In `SavingAccount`, we would want to **hide internal details** like:
+    - `balanceUpdates`
+    - `transactionLogging`
+- These would be made `private` or `protected`, so the user only sees **a clean interface** with public methods like `deposit()` or `withdraw()`
+- This makes the interface easier for users to use and protects the system from unintended misuse. Users don't need to know **how** the `deposit` is processed, just that it works.
+
+## 2. Polymorphism + Abstraction Together
+- When `BankAccount` is abstract and we call `account->withdraw()` on a `BankAccount*` that actually points to a `SavingAccount`
