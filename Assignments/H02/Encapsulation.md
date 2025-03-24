@@ -1,6 +1,6 @@
 # Encapsulation
 
-## Part A: Conceptual Questions
+# Part A: Conceptual Questions
 
 ## 1. Definition
 - **Encapsulation** bundles data (attributes) and methods that operate on that data in a single unit, usually a class.
@@ -8,7 +8,9 @@
 - By **hiding the object's internal implementation**, **encapsulation** prevents unintended interference and maintains code security.
 
 **Example**:
-- Encapsulation works like how schools manage student grades. Student can view their grade but can't change it themselves. Only authorized people like teachers and administrators can update it, and they have specific rules to follow when making changes.
+- **Encapsulation** works like how schools manage student grades.
+- Student can view their grade but can't change it themselves.
+- Only authorized people like teachers and administrators can update it, and they have specific rules to follow when making changes.
 
 ```c++
 class Student
@@ -141,7 +143,7 @@ public:
 - Simplifies interaction: if customers have to manually enter commands to dispense a snack, it is confusing and inefficient
 ---
 
-## Part B: Small-Class Design
+# Part B: Small-Class Design
 ## 1. Class Skeleton
 
 ```c++
@@ -206,13 +208,13 @@ public:
     - Allows secure access to the balance without exposing it for unintended changes.
   
 ## 3. Documentation
-**Why other developers must not directly manipulate the `balance`:
+**Why other developers must not directly manipulate the `balance`:**
 - `balance` is made private so that it can only be accessed using methods within the class.
 - The only way to increase the balance is through the `deposit(double amount)` method, directly modifying the balance is not allowed
 - Balance decreases only when users withdraw the money using the `withdrawal(double amount)` and the amount of withdrawal cannot be greater than the current balance.
 ---
 
-## Part C: Reflection & Short-Answer
+# Part C: Reflection & Short-Answer
 ## 1. Pros and Cons
 **Pros:**
 - **Data integrity and security:** prevents accidental or unauthorized modifications by ensuring all data changes go through controlled methods.
