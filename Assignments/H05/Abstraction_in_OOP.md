@@ -80,4 +80,12 @@ int main() {
 - This makes the interface easier for users to use and protects the system from unintended misuse. Users don't need to know **how** the `deposit` is processed, just that it works.
 
 ## 2. Polymorphism + Abstraction Together
-- When `BankAccount` is abstract and we call `account->withdraw()` on a `BankAccount*` that actually points to a `SavingAccount`
+- When `BankAccount` is defined as an **abstract** class, calling `deposit()` on a `SavingAccount` object through a `BankAccount*` pointer or reference demonstrates **polymorphism**.
+- The `deposit()` method in `BankAccount` base class serves as the **abstract interface**, while `SavingAccount` provides the concrete **implementation**.
+- This use of **polymorphism** allows the caller to work with any class derived from `BankAccount` without needing to know the specific subclass, leading to **cleaner code and greater flexibility for future modifications**.
+
+## 3. Real-World Example
+**In healthcare software:**
+- A `PatientRecord` interface offers methods like `getVital()` or `patientHistory()`
+- The internal processes like data encryption and access control are **hidden** from the user through **abstraction**
+- This simplifies the API for healthcare workers using the system, so they can focus on treating patients, not the technical complexities.
