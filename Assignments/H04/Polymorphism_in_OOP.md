@@ -93,7 +93,7 @@ int main() {
 ```
 ---
 
-# Part D: Reflectin & Real-World Applications
+# Part D: Reflection & Real-World Applications
 ## 1. Practical Example
 **A game with a base class `Enemy` and a `virtual` method `attack()`:**
 ```c++
