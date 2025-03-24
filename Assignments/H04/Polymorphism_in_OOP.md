@@ -91,3 +91,44 @@ int main() {
     return 0;
 }
 ```
+---
+
+# Part D: Reflectin & Real-World Applications
+## 1. Practical Example
+**A game with a base class `Enemy` and a `virtual` method `attack()`:**
+```c++
+class Ememy {
+public:
+    virtual void attack() = 0;
+};
+```
+- We can create derived classes like `Godzilla`, `Unicorn`, each with its own version of `attack()`
+  
+**Why Polymorphism Matters:**
+- You can keep all types of enemies in one array of `Enemy*` and call `attack()` on each without needing to know their specific types
+- The appropriate `attack()` behavior is decided at runtime, avoiding the need for lengthy if-else or switch statements to check types
+- It minimizes code repetition and makes it simple to introduce new enemy types later without changing existing code
+
+## 2. Potential Pitfalls
+### Method Overloading
+**Ambiguity with similar parameter types**:
+- If overloaded methods have parameters that are too similar (int vs. double), the compiler might choose the wrong version or throw an error due to ambiguity. 
+```c++
+void calculate(int x);
+void calculate(double x);
+
+calculate(5); // Could call int or double version depending on context
+```
+
+### Runtime Polymorphism
+**Performance Overhead and Debugging Complexity**:
+- Because the method to call is determined at **runtime**, there is a slight **performance overhead** (due to virtual table lookup), and it can make **debugging** harder, especially when trying to track which **overridden method** is being called within a complex inheritance structure.
+```c++
+Base* obj = new Derived();
+obj->calculate(); // Which version? Harder to trace in big system
+```
+
+## 3. Checking Understanding
+- When adding a new `Triangle` class that inherits from `Shape` and overrides the `draw()` method, **polymorphism lets us use it without changing any existing code** that already works with `Shape*` or `Shape&`
+- Since the existing code already use `shape->draw()` on a `Shape*`,  **runtime polymorphism** ensures that `Triangle::draw()` is called automatically if the actual object is a `Triangle`
+- There's no need to alter loops, function calls, or conditionals. We simply create the new class and use it where needed.
