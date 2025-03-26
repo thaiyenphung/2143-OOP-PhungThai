@@ -147,14 +147,14 @@ public:
 ## 1. Class Skeleton
 
 ```c++
-class BankAccout
+class BankAccount
 {
 private:
-    float balance;
-    int accountNumber;
+    double balance;
+    string accountNumber;
 public:
     // Constructor
-    BankAccount(int accNum, double initialBalance)
+    BankAccount(string accNum, double initialBalance)
     {
         accountNumber = accNum;
         if (initialBalance >= 0)
@@ -167,7 +167,7 @@ public:
     void deposit(double amount)
     {
         balance += amount;
-        cout << "New balance is $ << balance << endl;
+        cout << "New balance is $" << balance << endl;
     }
 
     // Private method to withdraw money
