@@ -90,11 +90,11 @@ public:
 };
 
 int main() {
-	Dog d;
-	d.breath(); // Allowed! class `Dog` inherits `breath()` from base class Animal
-	d.bark();
+    Dog d;
+    d.breath(); // Allowed! class `Dog` inherits `breath()` from base class Animal
+    d.bark();
 
-	return 0;
+    return 0;
 }
 ```
 
