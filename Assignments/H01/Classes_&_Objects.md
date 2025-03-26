@@ -85,8 +85,8 @@ int main()
 }
 ```
 <ins>**Explanation:**
-- The constructor `Unicorn(string n, float h)` initializes the object's private members `name` and `health` when the object is created to ensure a valid starting state
-- The destructor `~Unicorn()` is automatically called when the object goes out of scope, printing a message to indicate that the object is being cleaned up. This ensures that the resources are properly released when it is no longer needed.
+- The constructor `Unicorn(string n, float h)` initializes the object’s private members `name` and `health` when the object is created, ensuring it starts in a valid state.
+- The destructor `~Unicorn()` is automatically called when the object is destroyed. In this case, because the object is created using `new`, it does not go out of scope automatically, so the destructor is only called when `delete` is used
 ---
 
 ## Part C: Reflection & Short-Answer
