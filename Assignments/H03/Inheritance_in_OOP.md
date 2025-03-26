@@ -88,6 +88,14 @@ class Dog : public Animal {
 public:
     void bark() { cout << "Barking!" << endl; }
 };
+
+int main() {
+	Dog d;
+	d.breath(); // Allowed! class `Dog` inherits `breath()` from base class Animal
+	d.bark();
+
+	return 0;
+}
 ```
 
 - a `Dog` is a specific type of `Animal`
