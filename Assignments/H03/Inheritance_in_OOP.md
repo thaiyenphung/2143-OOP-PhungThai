@@ -122,12 +122,12 @@ public:
         cout << "Copying document..." << endl;
         scan();   
         print();  
-}:
+};
 
 int main() {
     MultiFunctionPrinter multPrinter;
     multPrinter.copy();
-};
+}
 
 
 ```
