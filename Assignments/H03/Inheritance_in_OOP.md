@@ -68,6 +68,7 @@ int main() {
 ```
 
 - `Student` is created **outside** of `Course`
+- `getName()` method allows other classes to read the `name` without modifying it
 - `Course` uses a reference or pointer to `Student`
 - When `Course` is destroyed, `Student` still exists
 ---
