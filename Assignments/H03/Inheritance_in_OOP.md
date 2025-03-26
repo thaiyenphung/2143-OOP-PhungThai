@@ -121,7 +121,8 @@ public:
     void copy() {
         cout << "Copying document..." << endl;
         scan();   
-        print();  
+        print();
+    } 
 };
 
 int main() {
