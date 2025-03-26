@@ -289,7 +289,7 @@ int main()
 ## 4. Pitfall of Multiple Inheritance
 **The Diamond Problem**
 - One common issue with **multiple inheritance** is the **Diamond Problem**. This happens when a class inherits from **two parent classes** that both inherit from a **same base class**.
-- As a result, the most derived class may inherit **two copies** of the base class, leading to **ambiguity, especially if both parents override or modify the same method.
+- As a result, the most derived class may inherit **two copies** of the base class, leading to **AMBUIGUITY**, especially if both parents override or modify the same method.
 - Example:
 ```c++
 class A {
@@ -323,6 +323,7 @@ public:
 
 class B : virtual public A {};
 class C : virtual public A {};
+
 class D : public B, public C {}; 
 
 int main() {
@@ -331,7 +332,7 @@ int main() {
     return 0;
 }
 ```
-> With `virtual` inheritance, D inherits just **one copy of class `A`, no diamond problem
+- With `virtual` inheritance, D inherits just **one copy** of class `A`, no diamond problem
 
 ### 2. Interface-Based Design (Java, C#)
 - Languages like Java and c# avoid multiple inheritance entirely but do not allow classes to inherit from more than one concrete class. Instead, they allow a class to **implement multiple interfaces** which only contain **method declarations**, not implementations, so there is **no ambiguity**.
