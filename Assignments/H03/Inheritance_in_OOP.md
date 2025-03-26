@@ -116,13 +116,25 @@ public:
 };
 
 class MultiFunctionPrinter : public Printer, public Scanner {
-    // Inherits both print() and scan()
+// Inherits both print() and scan()
+public:
+    void copy() {
+        cout << "Copying document..." << endl;
+        scan();   
+        print();  
+}:
+
+int main() {
+    MultiFunctionPrinter multPrinter;
+    multPrinter.copy();
 };
+
+
 ```
 ---
 
 ### 3. Overriding Methods
-- **Method overriding **is a type of **polymorphism** in which we **redefine** the member function of a class that it inherited from its base class, using the **same name, return type, and parameters**. The function signature remains the same, but the working of the function is modified to meet the needs of the derived class.
+- **Method overriding** is a type of **polymorphism** in which we **redefine** the member function of a class that it inherited from its base class, using the **same name, return type, and parameters**. The function signature remains the same, but the working of the function is modified to meet the needs of the derived class.
 
 **Why Overriding a Method instead of Adding a New Method in the Derived class?**
 - Because the base class already has the method we need
