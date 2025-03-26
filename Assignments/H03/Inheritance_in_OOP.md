@@ -42,6 +42,8 @@ class Student {
 public:
     string name;
     Student(string n) : name(n) {}
+
+    string getName() { return name; }
 };
 
 class Course {
