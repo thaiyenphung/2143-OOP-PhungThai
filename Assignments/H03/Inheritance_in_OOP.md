@@ -229,10 +229,10 @@ int main()
 ## 1. When to Use Inheritance
 **Beneficial Scenario:**
 - **Base class:** `Vehicle` has common features (attributes and methods like `speed`, `brand`, `start()`, `stop()`)
-- **Derived class:** `Car`, `Bicyle`, `Motocycle`, `SchoolBus` inherit from `Vehicle`, extending or overriding its methods. Each derived class can have a unique functionality like `openTrunk` for `Car` or `openStopSign` for `SchoolBus`
+- **Derived class:** `Car`, `Bicyle`, `Motocycle`, `SchoolBus` inherit from `Vehicle`, extending or overriding its methods. Each derived class can have a unique functionality like `openTrunk()` for `Car` or `openStopSign()` for `SchoolBus`
 
 **Overkill Scenario:**
-**Making a `Student` Inherit from a `Classroom`
+**Making a `Student` Inherit from a `Classroom`**
 - `Student` has `name`, `grade`, `study()`, `takeTests()`
 - `Classroom` has `roomNumber`, `whiteboard`, `numDesks`, or `listOfStudents`
 - `Student` cannot inherit from `Classroom` because a student is not a type of classroom. A student belongs in a classroom, but they shouldn't inherit things like whiteboard, roomNumber or desks. That would be like saying "I'm a classroom because I'm sitting in one."
