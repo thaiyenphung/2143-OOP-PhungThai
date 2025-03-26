@@ -70,14 +70,16 @@ public:
 
     void displayState()
     {
-        cout << "Unicorn" << name << " has " << health << " %  health." << endl;
+        cout << "Unicorn " << name << " has " << health << "%  health." << endl;
     }
 };
 
 int main()
 {
-    Unicorn uni1("Stella", 100);
-    uni1.displayState();
+    Unicorn *uni1 = new Unicorn("Stella", 100); // creates a Unicorn object on the heap
+    uni1->displayState();
+
+    delete uni1; // this calls the destructor to free memory
 
     return 0;
 }
