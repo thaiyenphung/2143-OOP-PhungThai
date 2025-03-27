@@ -1,7 +1,7 @@
 # Part A: Conceptual Questions
 ## 1. Definition
-- **Polymorphism** allows objects of different classes to be treated as objects of a common base class. This enables the same function, method, or operator to behave differently depending on which object calls it. It promotes **code reusability and flexibility**.
-- **Polymorphism** is considered on the **three main pillars** of OOP, alongside **encapsulation and inheritance**. It allows **different objects to respond to the same function call in their own way**.
+- **Polymorphism** allows objects of different classes to be treated as objects of a common base class. This **enables the same function, method, or operator to behave differently depending on which object calls it**. It promotes **code reusability and flexibility**.
+- **Polymorphism** is considered one the **three main pillars** of OOP, alongside **encapsulation and inheritance**. It allows **different objects to respond to the same function call in their own way**.
 - It enables **flexible, reusable, and maintainable code** by letting us write programs that work with general types (like a base class or interface) while allowing **specific behavior** at runtime. 
 
 ## 2. Compile-Time vs. Runtime
@@ -16,12 +16,12 @@
 - Example: **`Calculator` class**
     - Two numbers: `sum(int a, int b)`
     - Three numbers: `sum(int a, int b, double c)`
-    - Elements in an array: `sum(int[] numbers)`
+    - Elements in an array: `sum(int nums[])`
     - Instead of creating separate methods like `sum2numbers()`, `sum3numbers()`, `sumArrays()`, the class just **overloads `sum()`**, making it easier and more natural for users to interact with.
 
 ## 4. Method Overriding
 - A derived class **overrides** a method from the base class by **defining a new version of that method with the same name, return type, and parameters.** This lets the derived class provide **specialized behavior** while keeping a consistent interface.
-- In a language like C++, the `virtual` keyword in the base class implies that the method is **meant to be overridden**, and tells the compiler to use **runtime polymorphism (dynamic dispatch).
+- In a language like C++, the `virtual` keyword in the base class implies that the method is **meant to be overridden**, and tells the compiler to use **runtime polymorphism (dynamic dispatch)**.
 - The `override` keyword in the derived class:
     - Ensures the method **matches exactly** with a virtual method in the base class
     - Helps **prevent mistakes** like typos in the method name or incorrect parameter lists
@@ -33,7 +33,8 @@
 // BASE CLASS
 class Shape {
 public:
-    virtual void draw() = 0;
+    virtual void draw() = 0; // pure virtual function in this case,
+                             // but it doesn't always have to be a pure virtual function
 };
 
 // DERIVED CLASS CIRCLE
@@ -65,6 +66,12 @@ int main() {
 return 0;
 }
 ```
+**Output**:
+```
+Drawing a circle.
+Drawing a rectangle.
+```
+
 ---
 
 # Part C: Overloading vs. Overriding Distinctions
@@ -91,6 +98,15 @@ int main() {
     return 0;
 }
 ```
+
+## 2. Overriding Methods (See `Shape` Example)
+**When does C++ decide which draw() to call?**
+- At runtime (while the program is running), not at compile time because the method declared as `virtual` in the base class
+
+**Why does this matter for flexible code design?**
+- **Flexible**: don’t need to rewrite our loop or logic for every new shape.
+- **Expandable**: can add `Triangle`, `Star`, `Heart`,... and it all still works
+- **Cleaner**: avoid big if or switch statements
 ---
 
 # Part D: Reflection & Real-World Applications
