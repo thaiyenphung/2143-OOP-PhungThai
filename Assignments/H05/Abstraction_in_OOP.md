@@ -1,6 +1,6 @@
 # Part A: Conceptual Questions
 ## 1. Definition
-- **Abstraction** in OOP means focusing on **what an object does, not how does it**. It hides complex internal details and shows only the **essential features and functionality** that users need to interact with.
+- **Abstraction** in OOP means focusing on **what an object does, not how does it**. It **hides complex internal details** and shows only the **essential features and functionality** that users need to interact with.
 ## **Real-World Analogy**
 **A TV Remote**: 
 - We press a button to turn it on or change between channels
@@ -9,7 +9,7 @@
 ## 2. Abstraction vs. Encapsulation
 ### Abstraction
 - Focuses on **reducing complexity** by showing only essential features or functionalities to the user and **hiding the internal details**. It's about defining **what** an object does rather than **how** it does it.
-- **Example:** `drive()` method in a `Car` class gives the user the ability to "drive" the car (call `drive()`, without needing to understand how the engine works
+- **Example:** `drive()` method in a `Car` class gives the user the ability to "drive" the car (calls `drive()`), without needing to understand how the engine works
   
 ### Encapsulation
 - Focuses on **bundling data and methods together**, and **restricting direct access** to the internal workings of an object. It uses **access specifiers (`private`, `protected`, `public`)** to **control how data is accessed or modified**. It's about the **implementation** or **how** the object maintain control over its data.
@@ -32,7 +32,7 @@
 - **Abstraction** hides unnecessary details and focuses only on essential functionality, allowing developers to work with clean, high-level concepts rather than complex internal logic.
 ---
 
-# Part B: Minimal Class Example (Pseudo-code)
+# Part B: Minimal Class Example 
 
 ```c++
 // ABSTRACT BASE CLASS
@@ -56,7 +56,7 @@ public:
 };
 
 int main() {
-    BankAccount account = new SavingAccount();
+    BankAccount* account = new SavingAccount();
 
     account->deposit(100.0);
     account->withdraw(60.0);
@@ -67,8 +67,9 @@ int main() {
 }
 ```
 
-> - Pure `virtual` method (`virtual void deposit(double amount) = 0`) is a functino in a **base class** that has **no implementation** and must be **overridden** by any **derived class**
-> - It makes the base class **abstract**, meanign we **cannot create objects of that class directly** (`BankAccount account;` // ERROR: cannot directly instantiate abstract class)
+> - Pure `virtual` method (`virtual void deposit(double amount) = 0`) is a function in a **base class** that has **no implementation** and must be **overridden** by any **derived class**
+> - It makes the base class **abstract**, meaning we **cannot create objects of that class directly** (`BankAccount account;` // ERROR: cannot directly instantiate abstract class)
+>     -  Use a **pointer** or **reference** to the **abstract class** — as long as it’s pointing to a concrete **derived class**
 ---
 
 # Part C: Reflection & Comparison
@@ -81,8 +82,8 @@ int main() {
 
 ## 2. Polymorphism + Abstraction Together
 - When `BankAccount` is defined as an **abstract** class, calling `deposit()` on a `SavingAccount` object through a `BankAccount*` pointer or reference demonstrates **polymorphism**.
-- The `deposit()` method in `BankAccount` base class serves as the **abstract interface**, while `SavingAccount` provides the concrete **implementation**.
-- This use of **polymorphism** allows the caller to work with any class derived from `BankAccount` without needing to know the specific subclass, leading to **cleaner code and greater flexibility for future modifications**.
+- The `deposit()` method in `BankAccount` base class serves as the **abstract interface** (it defines **what** should happen, **not how**), while `SavingAccount` provides the concrete **implementation**.
+-	This use of **polymorphism** allows the caller to work with any class that inherits from BankAccount without needing to know the **exact type** of account, making the code **cleaner and more flexible for future changes**.
 
 ## 3. Real-World Example
 **In healthcare software:**
