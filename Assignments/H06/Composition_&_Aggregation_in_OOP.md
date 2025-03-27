@@ -20,7 +20,7 @@
   ```
   ---
 
-- **Aggregation** is also a **"has-a" relationship" but it's **weaker**. This container **uses** the object, but **does not own it**. The contained object exists **independently** of the container.
+- **Aggregation** is also a **"has-a"** relationship" but it's **weaker**. This container **uses** the object, but **does not own it**. The contained object exists **independently** of the container.
     - **Example:** A `Library` contains many `Books`, but the books can exist independently of the library as they might belong to another library, get transferred, or be stored in the storage. If the `Library` is destroyed, `Book` objects still exist elsewhere.
       
     ```c++
@@ -71,7 +71,7 @@ A `Doctor` **has a relationship** with `Patients` but **does not own** them.\
 ## 3. Differences from Inheritance
 **Inheritance ("Is-a")**
 - **Inheritance** creates a hierarchical relationship between classes, where a subclass derives (extends) from a base class, meaning the subclass is a **specific type** of the base class
-- **Example**: A `Cow` "is-a" `Animal`, it inherits behaviors like makeSound() from the `Animal` class
+- **Example**: A `Cow` "is-a" `Animal`, it inherits behaviors like `makeSound()` from the `Animal` class
 
 **Composition/ Aggregation ("Has-a")**
 - **Composition and Aggregation** create an ownership relationship where one class contains or is associated with another class.
@@ -80,7 +80,7 @@ A `Doctor` **has a relationship** with `Patients` but **does not own** them.\
 
 ### Why Favor Composition Over Inheritance
 **1. More flexible**
-- **Composition** allows us to **replace or modify components** independently of the main class. This promotes **modularity** and makes systems easier to develop.
+- **Composition** allows us to **replace or modify components** (like switching a `Weapon` from a sword to a bow) independently of the main class. This promotes **modularity** and makes systems easier to develop.
 
 **2. Avoiding Inheritance Pitfalls**
 - **Inheritance** can lead to **tight coupling** between base and derived classes
@@ -101,23 +101,23 @@ A `Doctor` **has a relationship** with `Patients` but **does not own** them.\
   - If the school is torn down, so is the classroom (they don't exist on their own)
   - This is a **strong ownership relationship**
     
-- **Aggregation: School has Students
+- **Aggregation: School has Students**
   - `School` **has-a** group of `Students`
   - But a student can transfer to another school or attend a different school to earn extra credits
   - A student can still exist **independently** if the school is closed (**loose relationship**)
 
 ### Why These Distinctions Matter in Code
-- Understanding ownership is important for managing object lifecycles:
+- **Understanding ownership is important for managing object lifecycles:**
     - With **composition**, the parent object handles both the creation and destruction of its parts
     - With **aggregation**, the associated objects are independently managed, as they are not owned.
-- Makes code clearer, safer, and maintainable:
+- **Makes code clearer, safer, and maintainable:**
     - Won't accidentally delete a shared object
     - Easier to determine which class is responsible for specific functionality and resource management
 
 ---
 
 # Part B: Minimal Class Design
-**1. Composition (Strong "has-a": Address belongs to Person)**
+**1. Composition (Strong "has-a": `Address` belongs to `Person`)**
 ```c++
 class Address {
 private:
@@ -146,7 +146,7 @@ public:
 - When `Person` is destroyed, so is `Address`
 ---
 
-**2. Aggregation (Weak "has-a": Address can exist independently without Person)**
+**2. Aggregation (Weak "has-a": `Address` can exist independently without `Person`)**
 ```c++
 class Address {
 public:
@@ -201,6 +201,6 @@ public:
 - Defines a hierarchical relationship where one class is a **specialized type** of another (ex: `Cow` is an `Animal`, inherits traits like `makeSound()` or `eat()`)
 ---
 
-### Why Avoid Inheritance When Possible
+## Why Avoid Inheritance When Possible
 - **Inheritance** creates **tight coupling** between the **subclass** and **base class**, which can make code more difficult to extend, easier to break with changes, and less reusable across different use cases.
 - By favoring **composition** or **aggregation**, behaviors can be added or modified without changing the inheritance hierarchy, offering designs that are easier to maintain.
