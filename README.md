@@ -2,7 +2,8 @@
 
 #### Repo: 2143 Object Oriented Programming
 
-#### Email: thaiyenphung@gmail.com
+#### Personal Email: thaiyenphung@gmail.com
+#### School Email: pythai1026@my.msutexas.edu
 
 #### Avatar:
 
