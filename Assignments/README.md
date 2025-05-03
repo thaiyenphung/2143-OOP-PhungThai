@@ -2,7 +2,7 @@
 
 |  #  | Folder Link | Assignment Description |
 | :-: | ----------- | ---------------------- |
-|  1  | [A03](https://github.com/thaiyenphung/2143-OOP-PhungThai/wiki)                       | OOP Wiki (in progress) |
+|  1  | [A03](https://github.com/thaiyenphung/2143-OOP-PhungThai/wiki)                       | OOP Wiki |
 |  2  | [H01](https://github.com/thaiyenphung/2143-OOP-PhungThai/tree/main/Assignments/H01)  | Classes & Objects |
 |  3  | [H02](https://github.com/thaiyenphung/2143-OOP-PhungThai/tree/main/Assignments/H02)  | Encapsulation in OOP | 
 |  4  | [H03](https://github.com/thaiyenphung/2143-OOP-PhungThai/tree/main/Assignments/H03)  | Inheritance in OOP |
