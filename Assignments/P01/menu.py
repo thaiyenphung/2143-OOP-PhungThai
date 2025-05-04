@@ -9,7 +9,7 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
 # Load the JSON data dynamically
 current_dir = os.path.dirname(os.path.abspath(__file__))
-json_path = os.path.normpath(os.path.join(current_dir, "..", "JSON PROJECT", "nobel_db.json"))
+json_path = os.path.normpath(os.path.join(current_dir, "nobel_db.json"))
 
 if not os.path.exists(json_path):
     print(f"[red]ERROR: File not found: {json_path}[/red]")
