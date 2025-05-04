@@ -12,7 +12,7 @@ current_dir = os.path.dirname(os.path.abspath(__file__))
 json_path = os.path.normpath(os.path.join(current_dir, "..", "JSON PROJECT", "nobel_db.json"))
 
 if not os.path.exists(json_path):
-    print("[red]ERROR: File not found:[/red] {json_path}")
+    print(f"[red]ERROR: File not found: {json_path}[/red]")
     exit()
     
 # db = NobelDB('/Users/thaiyenphung/Desktop/OOP_CMPS_Sp25/JSON Project/nobel_db.json')
