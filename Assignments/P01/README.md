@@ -6,14 +6,14 @@ This project is part of a class assignment to help us practice working with JSON
 
 ## What’s This Project About?
 
-We’re using a real Nobel Prize dataset stored in a `.json` file. The goal is to create a program that can:
+I'm using a real Nobel Prize dataset stored in a `.json` file. The goal is to create a program that can:
 
 - Search for laureates by year, name, category, ID, or motivation
 - Add new laureates to the database
 - Update motivation for a laureate
 - Delete a laureate by ID
 
-We also built a **terminal menu** using `InquirerPy` so it’s interactive and beginner-friendly!
+The project also includes an interactive **terminal menu** built with `InquirerPy`, so it's user-friendly and easy to navigate.
 
 ---
 
@@ -21,6 +21,6 @@ We also built a **terminal menu** using `InquirerPy` so it’s interactive and b
 
 - `nobel_db.py`: Base class that handles the JSON file and all CRUD operations
 - `menu.py` & `main.py`: The main file that runs the menu and connects everything
-- `nobel_db.json`: The actual dataset (not modified directly)
+- `nobel_db.json`: The actual dataset
 - `myKwargs.py` & `params.py`: Optional helper files for command-line features
 
