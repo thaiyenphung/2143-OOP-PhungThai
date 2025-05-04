@@ -8,9 +8,9 @@ json_path = os.path.join(current_dir, "nobel_db.json")
 
 # Confirm the file exists (optional, for debugging)
 if not os.path.exists(json_path):
-    print(f"[ERROR] File not found: {json_path}")
+    print("ERROR. File not found: {json_path}")
 else:
-    print(f"[INFO] Loaded JSON file from: {json_path}")
+    print("[INFO] Loaded JSON file from: {json_path}")
        
 if __name__ == "__main__":
     # create a JsonDB object using your JSON file

@@ -12,7 +12,7 @@ current_dir = os.path.dirname(os.path.abspath(__file__))
 json_path = os.path.normpath(os.path.join(current_dir, "nobel_db.json"))
 
 if not os.path.exists(json_path):
-    print(f"[red]ERROR: File not found: {json_path}[/red]")
+    print("[red]ERROR: File not found: {json_path}[/red]")
     exit()
     
 # db = NobelDB('/Users/thaiyenphung/Desktop/OOP_CMPS_Sp25/JSON Project/nobel_db.json')
@@ -55,7 +55,7 @@ def submenuSearch():
         return
 
     # Ask the user to enter a search keyword
-    keyword = console.input("[blue]Enter the {searchType.lower()} to search: [/blue] ")
+    keyword = console.input(f"[blue]Enter the {searchType.lower()} to search: [/blue] ")
 
     # Map the search type to the actual field name in the JSON
     field_map = {
@@ -79,7 +79,7 @@ def submenuSearch():
             print(item)
     else:
         print("[yellow]No matches found.[/yellow]")
-    # Return to the same submenu
+
     submenuSearch()
     
     

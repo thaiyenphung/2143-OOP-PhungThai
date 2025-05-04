@@ -11058,6 +11058,19 @@
                     "share": "1"
                 }
             ]
+        },
+        {
+            "year": "clear && python3 -u \"/Users/thaiyenphung/Desktop/OOP_CMPS_Sp25/JSON_Project/2143-OOP-PhungThai/Assignments/P01/menu.py\"",
+            "category": "clear",
+            "laureates": [
+                {
+                    "id": "clear",
+                    "firstname": " ",
+                    "surname": "",
+                    "motivation": "",
+                    "share": ""
+                }
+            ]
         }
     ]
 }
