@@ -1,6 +1,6 @@
 import sys
 import os
-from myKwargs import MyKwargs  # custom function to parse command-line arguments
+from myKwargs import MyKwargs
 
 if __name__ == "__main__":
     # Get the full path to this file 
