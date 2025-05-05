@@ -1,10 +1,14 @@
 from InquirerPy import inquirer
 from rich import print
 from nobelDB import NobelDB
-
+from rich.console import Console
 import os
 import sys
+
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
+
+# Setup console
+console = Console()
 
 # Load the JSON data dynamically
 current_dir = os.path.dirname(os.path.abspath(__file__))
@@ -22,13 +26,13 @@ def submenuCreate():
     """
     Add a new laureate
     """
-    year = input("[blue]Enter year: [/blue]")
-    category = input("[blue]Enter category: [/blue]")
-    id = input("[blue]Enter id: [/blue]")
-    firstname = input("[blue]Enter firstname: [/blue]")
-    surname = input("[blue]Enter surname: [/blue]")
-    motivation = input("[blue]Enter motivation: [/blue]")
-    share = input("[blue]Enter share: [/blue]")
+    year = console.input("[blue]Enter year: [/blue]")
+    category = console.input("[blue]Enter category: [/blue]")
+    id = console.input("[blue]Enter id: [/blue]")
+    firstname = console.input("[blue]Enter firstname: [/blue]")
+    surname = console.input("[blue]Enter surname: [/blue]")
+    motivation = console.input("[blue]Enter motivation: [/blue]")
+    share = console.input("[blue]Enter share: [/blue]")
     
     if db.add_laureate(year, category, {
         "id": id,
@@ -37,9 +41,9 @@ def submenuCreate():
         "motivation": motivation,
         "share": share,
     }):
-        print("[green]Laureate added successfully![/green]")
+        console.print("[green]Laureate added successfully![/green]")
     else:
-        print("[red]Failed to add laureate.[/red]")
+        console.print("[red]Failed to add laureate.[/red]")
         
 
 def submenuSearch():
@@ -53,7 +57,7 @@ def submenuSearch():
         return
 
     # Ask the user to enter a search keyword
-    keyword = input(f"[blue]Enter the {searchType.lower()} to search: [/blue] ")
+    keyword = console.input(f"[blue]Enter the {searchType.lower()} to search: [/blue]")
 
     # Map the search type to the actual field name in the JSON
     field_map = {
@@ -69,14 +73,14 @@ def submenuSearch():
     result = db.search_laureates(**{field_map[searchType]: keyword})
 
     # Show results
-    print(f"[green]Searching for {searchType.lower()} = '{keyword}'... Done![/green]")
+    console.print(f"[green]Searching for {searchType.lower()} = '{keyword}'... Done![/green]")
     
     if result:
-        print("[green]Search complete. Results:[/green]")
+        console.print("[green]Search complete. Results:[/green]")
         for item in result:
             print(item)
     else:
-        print("[yellow]No matches found.[/yellow]")
+        console.print("[yellow]No matches found.[/yellow]")
 
     submenuSearch()
     
@@ -85,26 +89,26 @@ def submenuUpdate():
     """
     Update laureate motivation
     """
-    id = input("[blue] Enter laureate ID to update: [/blue]")
-    new_motivation = input("[blue] Enter new motivation: [/blue]")
+    id = console.input("[blue] Enter laureate ID to update: [/blue]")
+    new_motivation = console.input("[blue] Enter new motivation: [/blue]")
     
     if db.update_laureate_motivation(id, new_motivation):
-        print("[green]Laureate motivation updated successfully![/green]")
+        console.print("[green]Laureate motivation updated successfully![/green]")
     else:
-        print("[red]No laureate found with that ID.[/red]")
+        console.print("[red]No laureate found with that ID.[/red]")
     
 
 def submenuDelete():
-    id = input("[blue] Enter laureate ID to delete: [/blue]")
+    console.id = input("[blue] Enter laureate ID to delete: [/blue]")
 
     if not id.isdigit():
-        print("[red]Invalid ID. Try again.[/red]")
+        console.print("[red]Invalid ID. Try again.[/red]")
         return
     
     if db.delete_laureate(id):
-        print("[green]Laureate deleted successfully![/green]")
+        console.print("[green]Laureate deleted successfully![/green]")
     else:
-        print("[red]Failed to delete laureate.[/red]")
+        console.print("[red]Failed to delete laureate.[/red]")
         
         
 def main_menu():
@@ -126,7 +130,7 @@ def main_menu():
         elif choice == "Delete":
             submenuDelete()
         elif choice == "Exit":
-            print("[bold red]Goodbye![/bold red]")
+            console.print("[bold yellow]Goodbye![/bold yellow]")
             break
 
 
