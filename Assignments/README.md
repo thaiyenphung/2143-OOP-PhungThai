@@ -2,7 +2,7 @@
 
 |  #  | Folder Link | Assignment Description                      |
 | :-: | ----------- | ------------------------------------------- |
-| A04 | [A04](./A04) | Advanced Concepts Assignment                |
+| A04 | [A04](./A04) | Pictures from COS 2025                      |
 | H01 | [H01](./H01) | Classes and Objects                         |
 | H02 | [H02](./H02) | Encapsulation & Optional Research           |
 | H03 | [H03](./H03) | Inheritance & Optional Research             |
