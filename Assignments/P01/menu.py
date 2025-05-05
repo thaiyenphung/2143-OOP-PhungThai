@@ -1,7 +1,6 @@
 from InquirerPy import inquirer
 from rich import print
 from nobelDB import NobelDB
-from rich.console import Console
 
 import os
 import sys
@@ -18,19 +17,18 @@ if not os.path.exists(json_path):
 # db = NobelDB('/Users/thaiyenphung/Desktop/OOP_CMPS_Sp25/JSON Project/nobel_db.json')
 
 db = NobelDB(json_path)
-console = Console()
 
 def submenuCreate():
     """
     Add a new laureate
     """
-    year = console.input("[blue]Enter year: [/blue]")
-    category = console.input("[blue]Enter category: [/blue]")
-    id = console.input("[blue]Enter id: [/blue]")
-    firstname = console.input("[blue]Enter firstname: [/blue]")
-    surname = console.input("[blue]Enter surname: [/blue]")
-    motivation = console.input("[blue]Enter motivation: [/blue]")
-    share = console.input("[blue]Enter share: [/blue]")
+    year = input("[blue]Enter year: [/blue]")
+    category = input("[blue]Enter category: [/blue]")
+    id = input("[blue]Enter id: [/blue]")
+    firstname = input("[blue]Enter firstname: [/blue]")
+    surname = input("[blue]Enter surname: [/blue]")
+    motivation = input("[blue]Enter motivation: [/blue]")
+    share = input("[blue]Enter share: [/blue]")
     
     if db.add_laureate(year, category, {
         "id": id,
@@ -55,7 +53,7 @@ def submenuSearch():
         return
 
     # Ask the user to enter a search keyword
-    keyword = console.input(f"[blue]Enter the {searchType.lower()} to search: [/blue] ")
+    keyword = input(f"[blue]Enter the {searchType.lower()} to search: [/blue] ")
 
     # Map the search type to the actual field name in the JSON
     field_map = {
@@ -87,8 +85,8 @@ def submenuUpdate():
     """
     Update laureate motivation
     """
-    id = console.input("[blue] Enter laureate ID to update: [/blue]")
-    new_motivation = console.input("[blue] Enter new motivation: [/blue]")
+    id = input("[blue] Enter laureate ID to update: [/blue]")
+    new_motivation = input("[blue] Enter new motivation: [/blue]")
     
     if db.update_laureate_motivation(id, new_motivation):
         print("[green]Laureate motivation updated successfully![/green]")
@@ -97,7 +95,7 @@ def submenuUpdate():
     
 
 def submenuDelete():
-    id = console.input("[blue] Enter laureate ID to delete: [/blue]")
+    id = input("[blue] Enter laureate ID to delete: [/blue]")
 
     if not id.isdigit():
         print("[red]Invalid ID. Try again.[/red]")
