@@ -1,15 +1,3 @@
-<<<<<<< HEAD
-## Phung Thai
-
-#### Repo: 2143 Object Oriented Programming
-
-#### Personal Email: thaiyenphung@gmail.com
-#### School Email: pythai1026@my.msutexas.edu
-
-#### Avatar:
-
-<img src="https://images2.imgbox.com/ae/6a/yk9zZs0H_o.png?download=true" width=200>
-=======
 # P01 – Nobel Prize JSON Project
 
 This project is part of a class assignment to help us practice working with JSON files and build a basic CRUD (Create, Read, Update, Delete) system using Python.
@@ -35,5 +23,3 @@ The project also includes an interactive **terminal menu** built with `InquirerP
 - `menu.py` & `main.py`: The main file that runs the menu and connects everything
 - `nobel_db.json`: The actual dataset
 - `myKwargs.py` & `params.py`: Optional helper files for command-line features
-
->>>>>>> 0fe8d4c (Initial commit of Nobel JSON Project)
