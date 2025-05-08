@@ -4,12 +4,12 @@
 |--------------------|-------------------------------------------------------|------------------------------------|
 | `README.md`        | Project documentation                                 | [README.md](./README.md)           |
 | `nobel_db.json`    | Nobel Prize dataset in JSON format                    | [nobel_db.py](./nobel_db.json) |
-| `json_db.py`       | Base class for handling JSON database functionality   | [json_db](./P01/json_db.py)        |
-| `nobelDB.py`       | NobelDB subclass for managing Nobel Prize data        | [nobelDB.py](./P01/nobelDB.py)     |
-| `main.py`          | Simple starter script for performing searches         | [main.py](./P01/main.py)           |
-| `menu.py`          | Terminal UI using InquirerPy for CRUD operations      | [menu.py](./P01/menu.py)           |
-| `myKwargs.py`      | Utility for parsing keyword arguments from terminal   | [myKwargs.py](./P01/myKwargs.py)   |
-| `params.py`        | Optional parameters file used in command-line setups  | [params.py](./P01/params.py)       |
+| `json_db.py`       | Base class for handling JSON database functionality   | [json_db](./json_db.py)        |
+| `nobelDB.py`       | NobelDB subclass for managing Nobel Prize data        | [nobelDB.py](./nobelDB.py)     |
+| `main.py`          | Simple starter script for performing searches         | [main.py](./main.py)           |
+| `menu.py`          | Terminal UI using InquirerPy for CRUD operations      | [menu.py](./menu.py)           |
+| `myKwargs.py`      | Utility for parsing keyword arguments from terminal   | [myKwargs.py](./myKwargs.py)   |
+| `params.py`        | Optional parameters file used in command-line setups  | [params.py](./params.py)       |
 
 ---
 
