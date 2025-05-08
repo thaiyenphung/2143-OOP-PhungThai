@@ -1,6 +1,15 @@
 # P01 – Nobel Prize JSON Project
 
-This project is part of a class assignment to help us practice working with JSON files and build a basic CRUD (Create, Read, Update, Delete) system using Python.
+| File Name           | Description                                           | Link                              |
+|--------------------|-------------------------------------------------------|------------------------------------|
+| `README.md`        | Project documentation                                 | [README.md](./README.md)           |
+| `nobel_db.json`    | Nobel Prize dataset in JSON format                    | [nobel_db.py](./P01/nobel_db.json) |
+| `json_db.py`       | Base class for handling JSON database functionality   | [json_db](./P01/json_db.py)        |
+| `nobelDB.py`       | NobelDB subclass for managing Nobel Prize data        | [nobelDB.py](./P01/nobelDB.py)     |
+| `main.py`          | Simple starter script for performing searches         | [main.py](./P01/main.py)           |
+| `menu.py`          | Terminal UI using InquirerPy for CRUD operations      | [menu.py](./P01/menu.py)           |
+| `myKwargs.py`      | Utility for parsing keyword arguments from terminal   | [myKwargs.py](./P01/myKwargs.py)   |
+| `params.py`        | Optional parameters file used in command-line setups  | [params.py](./P01/params.py)       |
 
 ---
 
