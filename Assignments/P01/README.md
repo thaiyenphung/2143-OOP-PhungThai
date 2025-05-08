@@ -3,7 +3,7 @@
 | File Name           | Description                                           | Link                              |
 |--------------------|-------------------------------------------------------|------------------------------------|
 | `README.md`        | Project documentation                                 | [README.md](./README.md)           |
-| `nobel_db.json`    | Nobel Prize dataset in JSON format                    | [nobel_db.py](./P01/nobel_db.json) |
+| `nobel_db.json`    | Nobel Prize dataset in JSON format                    | [nobel_db.py](./nobel_db.json) |
 | `json_db.py`       | Base class for handling JSON database functionality   | [json_db](./P01/json_db.py)        |
 | `nobelDB.py`       | NobelDB subclass for managing Nobel Prize data        | [nobelDB.py](./P01/nobelDB.py)     |
 | `main.py`          | Simple starter script for performing searches         | [main.py](./P01/main.py)           |
