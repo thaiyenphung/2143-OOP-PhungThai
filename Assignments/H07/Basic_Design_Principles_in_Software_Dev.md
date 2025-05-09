@@ -60,12 +60,11 @@ int main() {
 
 ### 2. Open-Closed Principle (OCP)
 - Classes and functions (software entities) should be **open for extension** but **closed for modification**, allowing adding new features **without changing existing code**
----
 
-> Other 3 Principles are:
->  - Liskov Substitution Principle (LSP)
->  - Interface Segregation Principle (ISP)
->  - Dependency Inversion Principle (DIP)
+### Other 3 Principles are:
+ - Liskov Substitution Principle (LSP)
+ - Interface Segregation Principle (ISP)
+ - Dependency Inversion Principle (DIP)
 
 ### Why SOLID Principles Matter in Large Codebases
 - In large codebases, SOLID principles help keep the system **modular, maintainable, and scalable.** They **reduce complexity, minimize bugs**, and make it easier for multiple developers to work on different parts of the code **without breaking each other's work.**
