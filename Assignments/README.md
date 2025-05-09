@@ -2,6 +2,7 @@
 
 |  #  | Folder Link | Assignment Description                      |
 | :-: | ----------- | ------------------------------------------- |
+| A03 | [A03](https://github.com/thaiyenphung/2143-OOP-PhungThai/wiki) | Wiki: OOP Terminology        |
 | A04 | [A04](./A04) | Pictures from COS 2025                      |
 | H01 | [H01](./H01) | Classes and Objects                         |
 | H02 | [H02](./H02) | Encapsulation & Optional Research           |
