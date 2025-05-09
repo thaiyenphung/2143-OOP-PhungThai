@@ -23,12 +23,3 @@ I'm using a real Nobel Prize dataset stored in a `.json` file. The goal is to cr
 - Delete a laureate by ID
 
 The project also includes an interactive **terminal menu** built with `InquirerPy`, so it's user-friendly and easy to navigate.
-
----
-
-## What’s Inside?
-
-- `nobel_db.py`: Base class that handles the JSON file and all CRUD operations
-- `menu.py` & `main.py`: The main file that runs the menu and connects everything
-- `nobel_db.json`: The actual dataset
-- `myKwargs.py` & `params.py`: Optional helper files for command-line features
